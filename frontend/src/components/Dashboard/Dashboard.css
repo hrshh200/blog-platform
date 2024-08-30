@@ -9,7 +9,7 @@
 }
 
 .mainContent {
-    background-image: url('D:\Files\Blogging Platform\blog-platform\frontend\public\blog-background.jpg');
+    background-image: url('/public/blog-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -54,9 +54,9 @@
     background-color: black;
 }
 
-.btnDisplay{
+.btnDisplay {
     margin-top: 7em;
     display: flex;
     flex-direction: row;
-    gap:1em;
+    gap: 1em;
 }

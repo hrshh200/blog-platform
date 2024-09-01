@@ -1,0 +1,147 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+nav ul li {
+    font-size: 20px;
+    display: inline;
+}
+
+nav ul li a,
+nav ul li button {
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav ul li button:hover {
+    text-decoration: underline;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 2em;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: white;
+    transform: translateY(-2px);
+    color: black;
+}
+
+.button:active {
+    background-color: #004080;
+    transform: translateY(0);
+}
+
+.blog-section {
+    margin: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-content h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.align_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.btnAlign {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btnAlign button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.btnAlign button:hover {
+    background-color: white;
+    transform: translateY(-2px);
+    color: black;
+}
+
+.btnAlign button:active {
+    background-color: #004080;
+    transform: translateY(0);
+}

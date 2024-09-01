@@ -12,10 +12,7 @@ const Modal = ({ isOpen, onClose, message}) => {
             <div className="modal-content">
                 <h2>{message}</h2>
                 <div className='modalButton'>
-                    <button onClick={onClose}>OK</button>
-                    <button
-                        onClick={(e) => navigate('/login')}
-                    >Login</button>
+                    <button onClick={(e)=>navigate('/')}>OK</button>
                 </div>
             </div>
         </div>

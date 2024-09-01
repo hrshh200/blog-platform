@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.css';
 import Modal from '../Modal/Modal'; // Import the Modal component
+import axios from 'axios';
 
 const Signup = () => {
 
@@ -20,36 +21,30 @@ const Signup = () => {
             [name]: value
         });
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         try {
-            const response = await fetch('/signup', {
-                method: 'POST',
+            const response = await axios.post('/signup', formData, {
                 headers: {
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
+                }
             });
+            const result = response.data;
 
-            const result = await response.json();
-
-            if (response.ok) {
-                // Handle success
+            if (response.status === 200) {
                 console.log('API Response:', result);
-                setApiResponse(result.message || 'Signup successful!'); // Set the message from the response
-                setIsModalOpen(true); // Open the modal after successful submission
+                setApiResponse(result.message || 'Signup successful!');
+                setIsModalOpen(true);
             } else {
-                // Handle server errors
                 console.error('Error:', result);
                 setApiResponse(result.message || 'Signup failed. Please try again.');
-                setIsModalOpen(true); // Open the modal to show error
+                setIsModalOpen(true);
             }
         } catch (error) {
-            console.error('Network error:', error);
-            setApiResponse('Network error. Please try again.');
-            setIsModalOpen(true); // Open the modal to show error
+            console.error('Error:', error);
+            setApiResponse(error.response?.data?.message || 'Network error. Please try again.');
+            setIsModalOpen(true);
         }
     };
 
@@ -92,7 +87,7 @@ const Signup = () => {
             </form>
 
             {/* Render the Modal */}
-            <Modal isOpen={isModalOpen} onClose={closeModal} message={apiResponse}/>
+            <Modal isOpen={isModalOpen} onClose={closeModal} message={apiResponse} />
         </div>
     );
 };
